@@ -1,0 +1,22 @@
+#!/bin/sh
+
+PREREQ=""
+prereqs()
+{
+ echo "$PREREQ"
+}
+
+case $1 in
+prereqs)
+ prereqs
+ exit 0
+ ;;
+esac
+
+. /scripts/functions
+
+# sole purpose of this script is to disable the open-iscsi one
+# see line 117 of initramfs.local-top
+rm /sbin/iscsistart
+
+exit 0

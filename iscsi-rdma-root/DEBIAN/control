@@ -1,0 +1,10 @@
+Package: iscsi-rdma-root
+Version: 1.0
+Section: admin
+Priority: optional
+Architecture: all
+Depends: rdma-core, open-iscsi
+Maintainer: Charlie Camilleri <charlie@i-am.cool>
+Description: iSER root scripts
+ Piggyback off open-iscsi initramfs scripts to log 
+ into the root LUN using iSER (if possible)
