@@ -1,0 +1,32 @@
+name: Build DEB
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install utils
+        run: apt update -y && apt install -y fakeroot lintian 
+
+      - name: Build package
+        run: fakeroot dpkg-deb --build iscsi-rdma-root/
+
+      - name: Validate with lintian
+        run: lintian iscsi-rdma-root.deb
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          name: iscsi-rdma-root.deb
+          path: ./iscsi-rdma.root.deb
