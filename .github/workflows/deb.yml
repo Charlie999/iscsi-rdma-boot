@@ -29,4 +29,4 @@ jobs:
         uses: actions/upload-artifact@v4.3.1
         with:
           name: iscsi-rdma-root.deb
-          path: ./iscsi-rdma.root.deb
+          path: ./iscsi-rdma-root.deb
