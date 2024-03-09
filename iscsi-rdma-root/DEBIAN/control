@@ -1,5 +1,5 @@
 Package: iscsi-rdma-root
-Version: 1.0
+Version: 1.1
 Section: admin
 Priority: optional
 Architecture: all
