@@ -16,6 +16,7 @@ esac
 
 copy_exec /usr/sbin/iscsiadm /sbin
 copy_exec /usr/sbin/iscsid /sbin
+copy_exec /usr/sbin/ibstat /sbin
 copy_exec /usr/bin/killall /bin
 
 cp -r /etc/iscsi $DESTDIR/etc/iscsi
